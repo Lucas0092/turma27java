@@ -14,7 +14,7 @@ programa
 
 		se(g1>0.3 e g1<=0.4){
 		escreva(g1+ " g1 Intimação para suspender a fabrica\n")
-	}
+	}
 		senao{
 			escreva(g1+ " g1 Dentro do limite\n")
 		}
@@ -23,7 +23,7 @@ programa
 			escreva(g2+ " g1 e g2 Intimação para suspender a fabrica\n")
 		}
 		senao{
-			escreva(g1+ " Intimação para suspender a fabrica\n") 
+			escreva(g1+ " condiçao normal\n") 
 			escreva(g2+ " condiçao normal\n")
 		}
 		se(g1+g2+g3 >0.4 e g1+g2+g3<=0.5){
@@ -44,7 +44,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 518; 
+ * @POSICAO-CURSOR = 554; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
