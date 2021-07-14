@@ -230,9 +230,11 @@ public class ContaPrincipal {
 					if (contaEt.getRespostaRepeteSN().toLowerCase().equals("n")) {
 						break;
 					}	
-					b1.mostraMenu();
-					escolhaMenu = leia.nextInt();						
-				}				
+											
+				}		
+				b1.mostraMenu();
+				escolhaMenu = leia.nextInt();
+				
 			} else if (escolhaMenu == 6) {
 				System.out.println("OPERAÇÃO FINALIZADA.");
 			} else {
