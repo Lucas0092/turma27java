@@ -1,0 +1,40 @@
+Exercicio 1
+
+create database db_rh
+
+Exercicio 1.2
+
+use db_rh;
+
+create table tb_funcionario(
+id bigint(5) auto_increment,
+nome varchar(20) not null,
+tempoAnos bigint(5),
+ativo boolean,
+cargo varchar(20) not null,
+salario decimal(10,2),
+
+primary key(id)
+
+);
+
+Exercicio 1.3
+
+insert into tb_funcionario(nome, tempoAnos, ativo, cargo, salario) values ("Lucas", 10, true, "produção", 1500,00)
+insert into tb_funcionario(nome, tempoAnos, ativo, cargo, salario) values ("Ana", 27, true, "Gerente", 10000,00)
+insert into tb_funcionario(nome, tempoAnos, ativo, cargo, salario) values ("Reginaldo", 15, true, "Facilitador", 1950,00)
+insert into tb_funcionario(nome, tempoAnos, ativo, cargo, salario) values ("Marco", 30, true, "Supervisor", 7500,00)
+
+select * from tb_funcionario
+
+Exercicio 1.4
+
+select * from tb_funcionario where salario > 2000
+
+Exercicio 1.5
+
+select * from tb_funcionario where salario < 2000
+
+Exercicio 1.6
+
+Atualizei o salario dos funcionarios por meio do comando form editor.

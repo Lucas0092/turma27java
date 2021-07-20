@@ -1,0 +1,41 @@
+Exercicio 2
+
+create database db_eCommerce
+
+Exercicio 2.1
+
+use db_eCommerce;
+
+create table tb_produto(
+id bigint(5) auto_increment,
+nome varchar(20) not null,
+valor decimal(10,2),
+ligado boolean,
+tipo varchar(20) not null,
+tamanho varchar(20) not null,
+
+primary key(id)
+);
+
+Exercicio 2.2
+
+insert into tb_produto(nome, valor, ligado, tipo, tamanho) values ("Celular", 1550.00, true, "Smartphone", "Pequeno")
+insert into tb_produto(nome, valor, ligado, tipo, tamanho) values ("Sofa", 2350.00, true, "Moveis", "Grande")
+insert into tb_produto(nome, valor, ligado, tipo, tamanho) values ("Mesa", 900.00, false, "Moveis", "Grande")
+insert into tb_produto(nome, valor, ligado, tipo, tamanho) values ("TV", 4000.00, true, "EletroEletronico", "Grande")
+insert into tb_produto(nome, valor, ligado, tipo, tamanho) values ("Radio", 100.00, false, "EletroEletronico", "Pequeno")
+insert into tb_produto(nome, valor, ligado, tipo, tamanho) values ("Cama", 1200.00, false, "Moveis", "Grande")
+insert into tb_produto(nome, valor, ligado, tipo, tamanho) values ("Ventilador", 150.00, true, "Eletrodomestico", "Pequeno")
+insert into tb_produto(nome, valor, ligado, tipo, tamanho) values ("Cadeira", 300.00, false, "Moveis", "Pequeno")
+
+Exercicio 2.3
+
+select * from tb_produto where valor > 500
+
+Exercicio 2.4
+
+select * from tb_produto where valor < 500
+
+Exercicio 2.5
+
+Atualizei o atributo ligado no id 2 para false

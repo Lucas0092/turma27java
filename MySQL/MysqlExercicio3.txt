@@ -1,0 +1,43 @@
+Exercicio 3
+
+create database db_escola
+
+Exercicio 3.1
+
+use db_escola;
+
+create table tb_aluno(
+id bigint(5) auto_increment,
+nome varchar(20) not null,
+nota decimal(10,2),
+sala bigint(5),
+idade bigint(5),
+matriculada boolean,
+
+primary key(id)
+);
+
+Exercicio 3.2
+
+insert into tb_aluno(nome, nota, sala, idade, matriculada) values ("Lucas", 7.5, 1, 29, true);
+insert into tb_aluno(nome, nota, sala, idade, matriculada) values ("Luan", 8.0, 2, 33, true);
+insert into tb_aluno(nome, nota, sala, idade, matriculada) values ("Joaslen", 9.0, 1, 30, true);
+insert into tb_aluno(nome, nota, sala, idade, matriculada) values ("Ana", 8.5, 3, 25, true);
+insert into tb_aluno(nome, nota, sala, idade, matriculada) values ("Reginaldo", 6.5, 4, 22, true);
+insert into tb_aluno(nome, nota, sala, idade, matriculada) values ("Marco", 10.0, 5, 27, true);
+insert into tb_aluno(nome, nota, sala, idade, matriculada) values ("Leonardo", 8.8, 6, 21, true);
+insert into tb_aluno(nome, nota, sala, idade, matriculada) values ("Marcia", 7.2, 7, 19, true)
+
+select * from tb_aluno
+
+Exercicio 3.3
+
+select * from tb_aluno where nota > 7
+
+Exercicio 3.4
+
+select * from tb_aluno where nota < 7
+
+Exercicio 3.5
+
+Atualizei o atributo nota no id 5 para 7.0
