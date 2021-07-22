@@ -1,0 +1,71 @@
+Exercicio 3.1
+
+create database db_farmacia_do_bem
+
+Exercicio 3.2
+
+use db_farmacia_do_bem;
+
+create table tb_categoria(
+id bigint(5) auto_increment,
+setor varchar(20) not null,
+atendimento varchar(20) not null,
+entrega boolean,
+
+primary key(id)
+
+);
+
+select * from tb_categoria;
+create table tb_produto(
+id bigint(5) auto_increment,
+nome varchar(20) not null,
+valor bigint(5),
+tamanho varchar(20),
+validade varchar(20),
+prescricaoM boolean,
+produto_id bigint,
+
+primary key(id),
+foreign key(produto_id)references tb_produto(id)
+
+);
+
+Exercicio 3.3
+
+insert into tb_categoria(setor, atendimento, entrega) values("Cosmetico", "online", true);
+insert into tb_categoria(setor, atendimento, entrega) values("Emergencia", "pessoal", false);
+insert into tb_categoria(setor, atendimento, entrega) values("Estoque", "online", true);
+insert into tb_categoria(setor, atendimento, entrega) values("Cosmetico", "pessoal", false);
+insert into tb_categoria(setor, atendimento, entrega) values("Emergencia", "online", true);
+
+Exercicio 3.4
+
+insert into tb_produto(nome, valor, tamanho, validade, prescricaoM, produto_id) values("Dipirona", 5.50, "Pequeno", "25/06/2026", false, 3);
+insert into tb_produto(nome, valor, tamanho, validade, prescricaoM, produto_id) values("Buscopan", 35.00, "Pequeno", "10/06/2026", false, 3);
+insert into tb_produto(nome, valor, tamanho, validade, prescricaoM, produto_id) values("Desodorante", 20.00, "Pequeno", "15/06/2026", false, 1);
+insert into tb_produto(nome, valor, tamanho, validade, prescricaoM, produto_id) values("Gaze", 3.70, "Pequeno", "12/06/2026", false, 3);
+insert into tb_produto(nome, valor, tamanho, validade, prescricaoM, produto_id) values("Mezalazina",70.00, "Pequeno", "30/06/2026", true, 2);
+insert into tb_produto(nome, valor, tamanho, validade, prescricaoM, produto_id) values("Omeprazol", 45.60, "Pequeno", "22/06/2026", false, 2);
+insert into tb_produto(nome, valor, tamanho, validade, prescricaoM, produto_id) values("Azatioprina", 150.00, "Pequeno", "27/06/2026", true, 5);
+insert into tb_produto(nome, valor, tamanho, validade, prescricaoM, produto_id) values("Balanca",120.00, "Grande", "14/06/2026", false, 1);
+
+Exercicio 3.5
+
+select * from tb_produto where valor > 50.00
+
+Exercicio 3.6
+
+select * from tb_produto where valor > 3.00 and valor < 60.00
+
+Exercicio 3.7
+
+select * from tb_produto where nome like "%B%"
+
+Exercicio 3.8
+
+select * from tb_produto inner join tb_categoria on tb_categoria.id = tb_produto.produto_id
+
+Exercicio 3.9
+
+select * from tb_produto inner join tb_categoria on tb_categoria.id = tb_produto.produto_id = tb_produto.produto_id where tb_categoria.id = 2

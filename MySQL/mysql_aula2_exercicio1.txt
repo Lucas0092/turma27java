@@ -1,0 +1,70 @@
+Exercicio 1.1
+
+create database db_generation_game_online
+
+Exercicio 1.2
+
+use db_generation_game_online;
+
+create table tb_classe(
+	id bigint(5) auto_increment,
+    caracteristica varchar(20) not null,
+    nivelClasse bigint(5),
+    ativo boolean,
+    
+    primary key(id)
+
+);
+
+select * from tb_classe;
+create table tb_personagem(
+	id bigint(5) auto_increment,
+    nome varchar(20) not null,
+    nivel bigint(5),
+    poderAtaque bigint(5),
+    poderDefesa bigint(5),
+    ativo boolean,
+    classe_id bigint,
+    
+    primary key(id),
+    foreign key(classe_id)references tb_classe(id)
+);
+
+Exercicio 1.3
+
+insert into tb_classe(caracteristica, nivelClasse, ativo) values("Cavaleiro", 20, true);
+insert into tb_classe(caracteristica, nivelClasse, ativo) values("Monge", 40, true);
+insert into tb_classe(caracteristica, nivelClasse, ativo) values("Mago", 35, true);
+insert into tb_classe(caracteristica, nivelClasse, ativo) values("Armeiro", 15, true);
+insert into tb_classe(caracteristica, nivelClasse, ativo) values("Arqueiro", 36, true);]
+
+Exercicio 1.4
+
+insert into tb_personagem(nome, nivel, poderAtaque, poderDefesa, ativo, classe_id) values("Ryu", 50, 7000, 3500, true,1);
+insert into tb_personagem(nome, nivel, poderAtaque, poderDefesa, ativo, classe_id) values("Teepo", 40, 3000, 1000, true,2);
+insert into tb_personagem(nome, nivel, poderAtaque, poderDefesa, ativo, classe_id) values("Garr", 55, 8000, 5000, true,3);
+insert into tb_personagem(nome, nivel, poderAtaque, poderDefesa, ativo, classe_id) values("Momo", 60, 4000, 8000, true, 4);
+insert into tb_personagem(nome, nivel, poderAtaque, poderDefesa, ativo, classe_id) values("Nina", 45, 500, 9000, true, 5);
+insert into tb_personagem(nome, nivel, poderAtaque, poderDefesa, ativo, classe_id) values("Tiger", 70, 10000, 2000, true, 1);
+insert into tb_personagem(nome, nivel, poderAtaque, poderDefesa, ativo, classe_id) values("Sander", 50, 5000, 5000, true, 2);
+insert into tb_personagem(nome, nivel, poderAtaque, poderDefesa, ativo, classe_id) values("Peco", 30, 2000, 2000, true, 3);
+
+Exercicio 1.5
+
+select * from tb_personagem where poderAtaque > 2000
+
+Exercicio 1.6
+
+select * from tb_personagem where poderDefesa > 1000 and poderDefesa < 2000
+
+Exercicio 1.7
+
+select * from tb_personagem where nome like "%C%"
+
+Exercicio 1.8
+
+select * from tb_personagem inner join tb_classe on tb_classe.id = tb_personagem.classe_id
+
+Exercicio 1.9
+
+select * from tb_personagem inner join tb_classe on tb_classe.id = tb_personagem.classe_id where tb_classe.id = 1

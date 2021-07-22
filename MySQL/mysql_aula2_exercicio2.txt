@@ -1,0 +1,71 @@
+Exercicio 2.1
+
+create database db_pizzaria_legal
+
+Exercicio 2.2
+
+use db_pizzaria_legal;
+
+create table tb_categoria(
+    id bigint(5) auto_increment,
+    tipo varchar(20) not null,
+    tamanho varchar(20) not null,
+    rodizio boolean,
+    
+    primary key(id)
+    );
+
+
+select * from tb_categoria;
+    create table tb_pizza(
+		id bigint(5) auto_increment,
+		sabor varchar(20) not null,
+		valor decimal(10,2),
+		massa varchar(20) not null,
+		borda boolean,
+		pedacos bigint(5),
+        pizza_id bigint,
+        
+        primary key(id),
+        foreign key(pizza_id)references tb_pizza(id)
+    
+    );
+
+Exercicio 2.3
+    
+    insert into tb_categoria(tipo, tamanho, rodizio) values ("Salgada", "Grande", false);
+    insert into tb_categoria(tipo, tamanho, rodizio) values ("Salgada", "Broto", false);
+    insert into tb_categoria(tipo, tamanho, rodizio) values ("Salgada", "Grande", true);
+    insert into tb_categoria(tipo, tamanho, rodizio) values ("Doce", "Grande", true);
+    insert into tb_categoria(tipo, tamanho, rodizio) values ("Doce", "Broto", false);
+
+Exercicio 2.4
+    
+    insert into tb_pizza(sabor, valor, massa, borda, pedacos, pizza_id) values("Calabreza", 30.00, "Fina", true, 8, 1);
+    insert into tb_pizza(sabor, valor, massa, borda, pedacos, pizza_id) values("Mussarela", 30.00, "Fina", true, 8, 1);
+    insert into tb_pizza(sabor, valor, massa, borda, pedacos, pizza_id) values("Toscana", 47.00, "Fina", false, 4, 2);
+    insert into tb_pizza(sabor, valor, massa, borda, pedacos, pizza_id) values("Portuguesa", 50.00, "Premium", false, 12, 1);
+    insert into tb_pizza(sabor, valor, massa, borda, pedacos, pizza_id) values("Caipira", 45.00, "Fina", true, 12, 1);
+    insert into tb_pizza(sabor, valor, massa, borda, pedacos, pizza_id) values("Prestigio", 55.00, "Fina", false, 8, 4);
+    insert into tb_pizza(sabor, valor, massa, borda, pedacos, pizza_id) values("Romeu e Julieta", 50.00, "Fina", false, 8, 4);
+    insert into tb_pizza(sabor, valor, massa, borda, pedacos, pizza_id) values("Brigadeiro", 50.00, "Fina", false, 4, 5);
+
+Exercicio 2.5
+    
+    select * from tb_pizza where valor > 45.00
+
+Exercicio 2.6
+    
+    select * from tb_pizza where valor > 29.00 and valor < 60.00
+
+Exercicio 2.7
+    
+    select * from tb_pizza where sabor like "%C%"
+
+Exercicio 2.8
+    
+    select * from tb_pizza inner join tb_categoria on tb_categoria.id = tb_pizza.pizza_id
+
+Exercicio 2.9
+    
+    select * from tb_pizza inner join tb_categoria on tb_categoria.id = tb_pizza.pizza_id = tb_pizza.pizza_id where tb_categoria.id = 1
