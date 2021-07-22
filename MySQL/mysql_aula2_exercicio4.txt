@@ -1,0 +1,72 @@
+Exercicio 4.1
+
+create database db_cidade_das_carnes
+
+Exercicio 4.2
+
+use db_cidade_das_carnes
+
+create table tb_categoria(
+id bigint(5) auto_increment,
+tipo varchar(20) not null,
+disponivel boolean,
+Entrega boolean,
+
+primary key(id)
+
+);
+
+select * from tb_categoria
+
+create table tb_produto(
+id bigint(5) auto_increment,
+corte varchar(20) not null,
+valor decimal(10,2),
+validade varchar(20) not null,
+quantidade bigint(5),
+ponto varchar(20) not null,
+produto_id bigint,
+
+primary key(id),
+foreign key(produto_id) references tb_categoria(id)
+);
+
+Exercicio 4.3
+
+insert into tb_categoria(tipo, disponivel, entrega) values("Bovino", true, true);
+insert into tb_categoria(tipo, disponivel, entrega) values("Bovino", true, false);
+insert into tb_categoria(tipo, disponivel, entrega) values("Suino", true, true);
+insert into tb_categoria(tipo, disponivel, entrega) values("Suino", true, false);
+insert into tb_categoria(tipo, disponivel, entrega) values("Ave", true, true);
+insert into tb_categoria(tipo, disponivel, entrega) values("Ave", true, false);
+
+Exercicio 4.4
+
+insert into tb_produto(corte, valor, validade, quantidade, ponto, produto_id) values("Picanha", 70.00, "25/06/2022", 1, "Fresca", 1);
+insert into tb_produto(corte, valor, validade, quantidade, ponto, produto_id) values("Maminha", 65.00, "12/06/2022", 1, "Fresca", 2);
+insert into tb_produto(corte, valor, validade, quantidade, ponto, produto_id) values("Bisteca", 43.00, "08/05/2022", 1, "Fresca", 3);
+insert into tb_produto(corte, valor, validade, quantidade, ponto, produto_id) values("Toicinho", 45.00, "10/04/2022", 1, "Fresca", 4);
+insert into tb_produto(corte, valor, validade, quantidade, ponto, produto_id) values("Asa", 35.00, "15/03/2022", 1, "Fresca", 5);
+insert into tb_produto(corte, valor, validade, quantidade, ponto, produto_id) values("SobreCoxa", 38.00, "03/03/2022", 1, "Fresca", 6);
+insert into tb_produto(corte, valor, validade, quantidade, ponto, produto_id) values("BabyBeef", 90.00, "22/06/2022", 1, "Fresca", 1);
+insert into tb_produto(corte, valor, validade, quantidade, ponto, produto_id) values("Peito", 40.00, "30/06/2022", 1, "Fresca", 4);
+
+Exercicio 4.5
+
+select * from tb_produto where valor > 50.00
+
+Exercicio 4.6
+
+select * from tb_produto where valor > 30.00 and valor < 60.00
+
+Exercicio 4.7
+
+select * from tb_produto where corte like "%c%"
+
+Exercicio 4.8
+
+select * from tb_produto inner join tb_categoria on tb_categoria.id = tb_produto.produto_id
+
+Exercicio 4.9
+
+ select tb_produto.corte from tb_produto inner join tb_categoria on tb_categoria.id = tb_produto.produto_id where tb_categoria.id = 1
